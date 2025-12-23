@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  php:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html:cached
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASS: root
+      DB_NAME: main
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: main
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
