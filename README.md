@@ -1,4 +1,4 @@
-# Pixelis — A 1,000 × 1,000 pixel marketplace
+# Pixelis — 1,000×1,000 pixel marketplace: buy a pixel, add a link & message (PHP, Docker, tests)
 
 [![CI](https://github.com/Evalutik/pixelis/actions/workflows/php.yml/badge.svg)](https://github.com/Evalutik/pixelis/actions/workflows/php.yml)
 [![Security Scan](https://github.com/Evalutik/pixelis/actions/workflows/security.yml/badge.svg)](https://github.com/Evalutik/pixelis/actions/workflows/security.yml)
