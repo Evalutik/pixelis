@@ -1,8 +1,16 @@
+# Pixelis — Pixel board marketplace
+
+[![CI](https://github.com/<your-org-or-username>/pixelis/actions/workflows/php.yml/badge.svg)](https://github.com/<your-org-or-username>/pixelis/actions/workflows/php.yml)
+[![Security Scan](https://github.com/<your-org-or-username>/pixelis/actions/workflows/security.yml/badge.svg)](https://github.com/<your-org-or-username>/pixelis/actions/workflows/security.yml)
+[![Codecov](https://codecov.io/gh/<your-org-or-username>/pixelis/branch/main/graph/badge.svg?token=)](https://codecov.io/gh/<your-org-or-username>/pixelis)
+
 Project: Pixel Board (local)
 
 Short description
 -----------------
 This is a small PHP-based pixel board application (mobile/pc variants included). It uses MySQL and flat-file storage (pixelsDB/, bronpix/) for pixel reservations and purchases.
+
+**API**: A simple API endpoint is available at `/api/pixel.php?x=<x>&y=<y>` (see `openapi.yaml` for spec).
 
 Prerequisites
 -------------

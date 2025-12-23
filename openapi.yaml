@@ -1,0 +1,30 @@
+openapi: 3.0.1
+info:
+  title: Pixelis API
+  version: '0.1.0'
+paths:
+  /api/pixel:
+    get:
+      summary: Get pixel metadata
+      parameters:
+        - in: query
+          name: x
+          required: true
+          schema:
+            type: integer
+        - in: query
+          name: y
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Pixel data
+          content:
+            application/json:
+              schema:
+                type: object
+        '404':
+          description: Pixel not found
+        '400':
+          description: Bad request (missing params)
