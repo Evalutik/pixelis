@@ -18,7 +18,7 @@
 	<?php require_once 'cookie/isacceptcookie.php'; ?>
 	<div class="main_form">
 		<h2>Hello, Friend!</h2>
-			<form action="actions/registration.php" method="POST">
+			<form action="/actions/registration.php" method="POST">
 			<?php
 				if ($_SESSION['message']) {
 					echo '<p class="msg">' . $_SESSION['message'] .'</p>';
@@ -157,7 +157,7 @@
 		}
 		function isFreeNow(){
 			let xhr = new XMLHttpRequest();
-		    xhr.open('GET', 'actions/isnickwrong.php?' + 'user_to_check=' + document.getElementById('check-nick').value);
+		    xhr.open('GET', '/actions/isnickwrong.php?' + 'user_to_check=' + document.getElementById('check-nick').value);
 		    xhr.onreadystatechange = function(){
 		        if(xhr.readyState === 4 && xhr.status === 200){
 		            let answ = xhr.responseText;

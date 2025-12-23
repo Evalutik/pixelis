@@ -18,7 +18,7 @@
 	<?php require_once 'cookie/isacceptcookie.php'; ?>
 	<div class="main_form">
 		<h2>Welcome back!</h2>
-			<form action="actions/authorization.php" method="POST">
+			<form action="/actions/authorization.php" method="POST">
 			<?php
 				if ($_SESSION['message']) {
 					echo '<p class="msg">' . $_SESSION['message'] .'</p>';
