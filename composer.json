@@ -6,7 +6,7 @@
     "php": ">=7.4"
   },
   "autoload": {
-    "files": ["vendor/helpers.php", "vendor/csrf.php"]
+    "files": ["bootstrap.php", "vendor/helpers.php", "vendor/csrf.php"]
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^3.0",
@@ -16,7 +16,7 @@
   },
   "scripts": {
     "fix": "php-cs-fixer fix",
-    "analyse": "phpstan analyse src --level=max",
+    "analyse": "phpstan analyse --level=max",
     "check": "php-cs-fixer fix --dry-run --diff && php -l $(git ls-files '*.php' | tr "\n" " ") && phpstan analyse --no-progress || true",
     "test": "phpunit --configuration phpunit.xml"
   }
