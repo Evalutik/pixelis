@@ -15,6 +15,7 @@ error_log
 # Generated pixel data
 /pixelsDB/
 /bronpix/
+/pixelsCL/colors.txt
 
 # Temporary files
 tmp/
