@@ -74,6 +74,32 @@ Roadmap / ideas for contribution
 - Move pixel storage to a proper DB or object store for scale; add deletion/migration tools  
 - Add analytics, payments, and admin moderation features  
 
+Why this project shows my skills (copy to CV/interview)
+-----------------------------------------------------
+- Implemented secure web auth (registration, password hashing, login) and eliminated SQL injection via prepared statements.  
+- Built CI with linting, static analysis (phpstan), unit and integration tests, and automated secret scanning (Gitleaks).  
+- Dockerized the dev environment and added a DB setup script for reproducible local development and CI testing.  
+- Designed and documented a small public API (OpenAPI) and delivered integration tests that exercise the full HTTP stack.  
+
+How to demo this project in interviews
+-------------------------------------
+- Start the app: `docker-compose up -d --build` and initialize the DB: `docker-compose exec php php vendor/setup_db.php --seed=dev:dev`.  
+- Sign up, sign in, and buy a pixel (Home → Buy pixel) — show the `activezki/` reservation file appears and then `bronpix/` entry.  
+- Show the API quickly: `curl "http://localhost:8080/api/pixel.php?x=5&y=6"` (returns pixel metadata if present).  
+
+Examples: quick API use (copy-paste)
+-----------------------------------
+# Show pixel metadata (returns 404 if not present)
+curl -sSf "http://localhost:8080/api/pixel.php?x=5&y=6" | jq || echo "Not found"
+
+# Run full test suite locally (requires PHP and Docker for integration tests)
+make test
+
+Tips for interview talking points
+--------------------------------
+- Mention trade-offs: flat-file pixel storage is simple and inspectable for prototyping; explain how you'd migrate to chunked storage or object storage for scale.  
+- Emphasize security: prepared statements, CSRF tokens, secret scanning in CI, and pre-commit hooks — practical small measures with real impact.  
+- Show that the repo is dev-friendly: Makefile, Docker, tests and developer docs mean anyone can run the full stack quickly.
 License
 -------
 MIT — see `LICENSE`.

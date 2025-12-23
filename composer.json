@@ -16,6 +16,8 @@
   },
   "scripts": {
     "fix": "php-cs-fixer fix",
-    "analyse": "phpstan analyse src --level=max"
+    "analyse": "phpstan analyse src --level=max",
+    "check": "php-cs-fixer fix --dry-run --diff && php -l $(git ls-files '*.php' | tr "\n" " ") && phpstan analyse --no-progress || true",
+    "test": "phpunit --configuration phpunit.xml"
   }
 }

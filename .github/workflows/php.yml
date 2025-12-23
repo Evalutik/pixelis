@@ -23,6 +23,13 @@ jobs:
       - name: Static analysis (phpstan)
         run: |
           if [ -f composer.json ]; then composer run-script analyse || true; fi
+      - name: Code style check (php-cs-fixer)
+        run: |
+          if command -v php-cs-fixer >/dev/null 2>&1; then
+            php-cs-fixer fix --dry-run --diff
+          else
+            composer global require friendsofphp/php-cs-fixer && php-cs-fixer fix --dry-run --diff
+          fi
 
   test:
     name: Tests (PHPUnit)
