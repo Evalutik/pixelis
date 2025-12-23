@@ -9,7 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="css/mobile/field_m.css">
 	</head>
 	<body>
-		<?php require_once 'cookie/isacceptcookie.php'; ?>
+		<?php require_once __DIR__ . '/bootstrap.php'; require_once 'cookie/isacceptcookie.php'; ?> 
 	    <script type="text/javascript">
 		    var flag_bgcnvs = true,
 				flag_clone = false;

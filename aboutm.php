@@ -11,7 +11,7 @@
 	</head>
 
 	<body style="max-height: none;">
-		<?php require_once 'cookie/isacceptcookie.php'; ?>
+		<?php require_once __DIR__ . '/bootstrap.php'; require_once 'cookie/isacceptcookie.php'; ?> 
 		<script async>
 				$(function() {
 			    $(document).on("click", ".mobile_menu_container .parent", function(e) {

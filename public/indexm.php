@@ -11,6 +11,7 @@
 
 	<body>
 		<?php
+			require_once __DIR__ . '/../bootstrap.php';
 			$fi = new FilesystemIterator(DATA_DIR . '/pixelsDB', FilesystemIterator::SKIP_DOTS);
 			$countboughtpix = iterator_count($fi);
 			if ($countboughtpix == 1000000) {
