@@ -25,6 +25,7 @@ node_modules/
 
 # Composer
 /vendor/*
+!vendor/setup_db.php
 
 # Large media (consider moving large user uploads out of repo)
 # Uncomment to ignore all photos
