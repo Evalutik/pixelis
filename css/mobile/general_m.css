@@ -1,0 +1,276 @@
+/*<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+в хедер */
+
+*{
+  margin: 0px;
+  padding: 0;
+  top: 0;
+  min-width: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+::selection{background: rgba(0, 0, 0, 1 ); color: #fff;}
+::-moz-selection {background: rgba(0, 0, 0, 1 ); color: #fff;}
+::-webkit-selection {background: rgba(0, 0, 0, 1 ); color: #fff;}
+
+body{
+  max-height: 365.5vh;
+}	
+/*@media (min-width: 1200px) { h5{font-size: 24px !important; } }*/
+
+h1{
+  font-size: 10.5rem;
+  font-family: Inter Bold, Big John, TTPro, SeguUI, Arial;
+}
+
+h2{
+  font-size: 4rem;
+  line-height: 1em;	
+  font-family: Inter Bold, Big John, TTPro, SeguUI, Arial;
+}
+
+h3{
+  font-size: 4rem;
+  line-height: 1em;	
+  font-family: Inter Bold, Big John, TTPro, SeguUI, Arial;	
+}
+
+h4{
+  font-size: 1.8vh;
+  font-family: TTPro, SeguUI, Arial;
+  font-weight: normal;	
+}
+
+h5{
+  font-size: 1.8vh;
+  font-family: TTPro, SeguUI, Arial;	
+  font-weight: normal;
+}
+
+p{
+  font-size: 1.8vh;	
+  font-family: TTPro, SeguUI, Arial;	
+}
+.pcolor{color: #7D7AED;}
+.bcolor{color: #000;}
+button{
+  -webkit-transition: background-color 200ms, color 200ms, box-shadow 200ms;
+  -moz-transition: background-color 200ms, color 200ms, box-shadow 200ms;
+  transition: background-color 200ms, color 200ms, box-shadow 200ms;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  font-family: TTPro, SeguUI, Arial;
+  font-size: 1.8vh;
+  border-radius: 50px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 25px 50px;
+  box-shadow: 0px 0px 20px -10px #000;
+  margin-top: 1.8vh;
+}
+button:hover{
+  box-shadow: 0px 0px 20px -1px #fff;
+  color: #7D7AED;
+}
+
+button.button-white-bg-purp-text:hover{
+  background-color: #7D7AED;
+  box-shadow: 0px 0px 30px -1px #7D7AED;
+}
+button.button-white-bg-purp-text a:active, /* активная/посещенная ссылка */ 
+button.button-white-bg-purp-text a{
+  text-decoration: none;
+  color: #7D7AED;
+}
+
+button.button-white-bg-purp-text:hover a{
+  color: #fff;
+}
+
+button.button-white-bg-black-text:hover{
+  background-color: #000;
+  box-shadow: 0px 0px 30px -1px #7D7AED;
+  color: #fff;
+}
+button.button-white-bg-black-text a:active, /* активная/посещенная ссылка */ 
+button.button-white-bg-black-text a{
+  text-decoration: none;
+  color: #000;
+}
+
+button.button-white-bg-black-text:hover a{
+  color: #fff;
+}
+
+.mobile_menu_overlay, .mobile_menu_container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.mobile_menu_container, .mobile_menu_container ul li ul{
+  -webkit-transition: all 200ms;
+  -moz-transition: all 60ms;
+  transition: all 200ms;
+}
+.mobile_menu_overlay{
+  display: none;
+  cursor: pointer;
+  z-index: 10200;
+  background: transparent;
+}
+.mobile_menu_container{
+  -webkit-transform: translateX(-50.5vw);
+  transform: translateX(-50.5vw);
+  width: 50vw;
+  overflow: hidden;
+  z-index: 10201;
+  background: transparent;
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(35px);
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-right: 5px solid rgba(255, 255, 255, 0.3);
+  border-top: 5px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 5px solid rgba(255, 255, 255, 0.3);
+
+}
+.mobile_menu_container.loaded{
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+}
+.mobile_menu_content{
+  position: relative;
+  top: 7vh;
+}
+
+.mobile_menu_container .mobile_menu_content{
+  overflow: auto;
+  max-height: 100%;
+  padding-bottom: 30px;
+}
+.mobile_menu_container ul{
+  margin: 0;
+  padding: 0;
+}
+.mobile_menu_container ul li{
+  list-style: none;
+}
+.mobile_menu_container ul li a{
+  display: block;
+  padding-left: 7vw;
+  padding-top: 0.85em;
+  padding-bottom: 0.85em;
+  line-height: 20px;
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.8vh;
+  font-family: TTPro, SeguUI, Arial;
+
+}
+.mobile_menu_container ul li a.parent{
+  padding-right: 50px;
+  background: #fff url("images/arrow_right.svg") right 20px center no-repeat;
+  background-size: 20px;
+}
+.mobile_menu_container ul li a.parent:hover{
+  background: #fff url("images/arrow_right.svg") right 20px center no-repeat;
+  color: #7D7AED;
+  background-size: 20px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.mobile_menu_container ul li a.back{
+  padding-left: 50px;
+  background: #fff url("images/arrow_left.svg") left 20px center no-repeat;
+  background-size: 20px;
+  box-sizing: border-box;
+  min-height: 50px;
+}
+.mobile_menu_container ul li a.back:hover{
+  background: #fff;
+  color: #7D7AED;
+  background-size: 20px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.mobile_menu_container ul li a:hover{
+  background: #fff;
+  color: #7D7AED;
+  background-size: 20px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.mobile_menu_container ul li ul{
+  -webkit-transform: translateX(50vw);
+  transform: translateX(50vw);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #7D7AED;
+  z-index: 2;
+}
+.mobile_menu_container ul li ul.loaded{
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+}
+.mobile_menu_container ul li ul.activity{
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+@media (max-width: 320px){
+  .mobile_menu_container{
+    width: 240px;
+  }
+}
+.mobile_menu{
+  width: 8rem;
+  height: 8rem;
+  max-width: 8vh;
+  max-height: 8vh;
+  background-color: transparent;
+  background-image: url(../../photo/white/menu_btn_w.svg);
+  background-repeat: no-repeat;
+  background-size: 60% 70%;
+  background-position: center;
+  position: relative;
+    left: calc(7vw - 0.2*8rem);
+    top: calc(7vw - 0.2*8rem);
+  z-index: 5;
+}
+.mobile_menu:hover{
+  filter: drop-shadow(0px 0px 10px #fff);
+}
+
+@font-face{
+  font-family: "Inter Bold";
+  src: url("../../fonts/Inter-ExtraBold.ttf");
+}
+@font-face{
+  font-family: "Big John";
+  src: url("../../fonts/BIG_JOHN.otf");
+}
+@font-face{
+  font-family: "SeguUI";
+  src: url("../../fonts/seguibl.ttf");
+}
+@font-face{
+  font-family: "TTPro";
+  src: url("../../fonts/TTNormsProMedium.ttf");
+}
+@font-face{
+  font-family: "TTProBld";
+  src: url("../../fonts/TTNormsPro-Bold.ttf");
+}
+@font-face{
+  font-family: "Aileron";
+  src: url("../../fonts/Aileron-Regular.ttf");
+}

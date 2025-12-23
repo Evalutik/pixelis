@@ -1,0 +1,156 @@
+*{
+	margin: 0;
+	padding: 0;
+	top: 0;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+::selection{background: rgba(0, 0, 0, 1 ); color: #fff;}
+::-moz-selection {background: rgba(0, 0, 0, 1 ); color: #fff;}
+::-webkit-selection {background: rgba(0, 0, 0, 1 ); color: #fff;}
+
+::-webkit-scrollbar {
+  width: 3px;
+  background-color: #7D7AED;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+}
+body{
+	overflow-x: hidden;
+	font-family: TTPro, SeguUI, Arial;	
+	height: 100vh;
+	width: 100vw;
+	background: linear-gradient(-45deg, #901cff, #7D7AED, #9d8eed,  #7D7AED);
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+	background-size: 250% 250%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	-webkit-transition: all 200ms;
+	-moz-transition: all 200ms;
+	transition: all 200ms;
+	color: #fff;
+}
+
+h1{
+	user-select: none;
+	font-size: 15rem;
+	line-height: 0.84em;	
+	font-family: Inter Bold, Big John, TTPro, SeguUI, Arial;
+}
+
+h2{
+	font-size: 3rem;
+	line-height: 1em;	
+	font-family: Inter Bold, Big John, TTPro, SeguUI, Arial;
+}
+
+
+h3{
+	font-size: 2rem;
+	line-height: 1em;	
+	font-family: Inter Bold, Big John, TTPro, SeguUI, Arial;	
+}
+
+p{
+	font-size: 1.2rem;	
+	font-family: TTPro, SeguUI, Arial;
+	font-weight: normal;	
+}
+.buttons{
+	margin-top: 20px;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	grid-template-columns: repeat(5, auto);
+	column-gap: 15px;
+}
+button{
+ -webkit-transition: background-color 200ms, color 200ms, box-shadow 200ms;
+ -moz-transition: background-color 200ms, color 200ms, box-shadow 200ms;
+ transition: background-color 200ms, color 200ms, box-shadow 200ms;
+ -moz-user-select: none;
+ -khtml-user-select: none;
+ user-select: none;
+ cursor: pointer;
+ font-family: TTPro, SeguUI, Arial;
+ font-size: 1.2rem;
+ border-radius: 20px;
+ background-color: transparent;
+ outline: none;
+ border: none;
+ padding: 10px 20px;
+ background-color: #7D7AED;
+ box-shadow: 0px 0px 10px -5px #000;
+ color: #fff;
+}
+button:hover{
+ background-color: #fff;
+ box-shadow: 0px 0px 20px -1px #fff;
+ color: #7D7AED;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+@font-face{
+	font-family: "Inter Bold";
+	src: url("../fonts/Inter-ExtraBold.ttf");
+}
+@font-face{
+	font-family: "Big John";
+	src: url("../fonts/BIG_JOHN.otf");
+}
+@font-face{
+	font-family: "SeguUI";
+	src: url("../fonts/seguibl.ttf");
+}
+@font-face{
+	font-family: "TTPro";
+	src: url("../fonts/TTNormsProMedium.ttf");
+}
+@font-face{
+	font-family: "TTProBld";
+	src: url("../fonts/TTNormsPro-Bold.ttf");
+}
+@font-face{
+	font-family: "Aileron";
+	src: url("../fonts/Aileron-Regular.ttf");
+}

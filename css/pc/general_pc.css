@@ -1,0 +1,395 @@
+*{
+	margin: 0;
+	padding: 0;
+	top: 0;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+::selection{background: rgba(0, 0, 0, 1 ); color: #fff;}
+::-moz-selection {background: rgba(0, 0, 0, 1 ); color: #fff;}
+::-webkit-selection {background: rgba(0, 0, 0, 1 ); color: #fff;}
+
+::-webkit-scrollbar {
+  width: 3px;
+  background-color: #7D7AED;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+}
+:root {
+  --h1-font-size: 5rem;
+  --h2-font-size: 3rem;
+  --h3-font-size: 2rem;
+  --h4-font-size: 1.2rem;
+  --h5-font-size: 1.2rem;
+  --p-font-size: 1.2rem;
+
+  --border-radius: 20px;
+  --padding-flex: 20px;
+  --short-input-width: 66px;
+  --example-pix-color-size: 46px;
+  --border-menu-size: 2px;
+  --menu-grid-btn-size: 46px;
+  --menu-grid-size: 200px;
+  --menu-margin-top-size: 20px;
+
+  --shadow-set-colorful-1: 0 0 20px 0px #7d7aed;
+  --shadow-set-colorful-1-small: 0 0 20px 0px #7d7aed;
+  --shadow-set-black-1: 0px 0px 10px -5px #000;
+}
+@media (max-width: 980px) {
+	:root {
+ 		--h1-font-size: 9rem;
+  	--h2-font-size: 3rem;
+  	--h3-font-size: 3rem;
+  	--h4-font-size: 2.4rem;
+  	--h5-font-size: 2.4rem;
+  	--p-font-size: 2.4rem;
+
+  	--border-radius: 50px;
+		--padding-flex: 50px;
+		--short-input-width: 128px;
+		--example-pix-color-size: 80px;
+		--border-menu-size: 5px;
+		--menu-grid-btn-size: 100px;
+  	--menu-grid-size: 50vw;
+  	--menu-margin-top-size: 5vw;
+
+		--shadow-set-colorful-1: 0px 0px 80px 0px #7d7aed;
+		--shadow-set-colorful-1-small: 0px 0px 40px 0px #7d7aed;
+		--shadow-set-black-1: 0px 0px 20px -10px #000;
+	}
+}	
+body{
+	overflow-x: hidden;
+	font-family: TTPro, SeguUI, Arial;	
+	font-size: var(--p-font-size);
+}
+h1{
+	font-size: var(--h1-font-size);
+	line-height: 0.84em;	
+	font-family: Inter Bold, Big John, TTPro, SeguUI, Arial;
+}
+h2{
+	font-size: var(--h2-font-size);
+	line-height: 1em;	
+	font-family: Inter Bold, Big John, TTPro, SeguUI, Arial;
+}
+h3{
+	font-size: var(--h3-font-size);
+	line-height: 1em;	
+	font-family: Inter Bold, Big John, TTPro, SeguUI, Arial;	
+}
+h4{
+	font-size: var(--h4-font-size);
+	font-family: TTPro, SeguUI, Arial;	
+	font-weight: normal;
+}
+h5{
+	font-size: var(--h5-font-size);
+	font-family: TTPro, SeguUI, Arial;
+	font-weight: normal;
+}
+p{
+	font-size: var(--p-font-size);	
+	font-family: TTPro, SeguUI, Arial;
+	font-weight: normal;	
+}
+
+a#hrefafix:active, /* активная/посещенная ссылка */ 
+a#hrefafix{
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+  transition: all .2s;
+}
+a#hrefafix:hover{ filter: drop-shadow(0px 0px 5px #fff); }
+
+.pcolor{ color: #7D7AED; }
+.bcolor{ color: #000; }
+.wcolor{ color: #fff; }
+.light-text{
+	color: #fff;
+	filter: drop-shadow(0 0 8px #fff);
+}
+button{
+	-webkit-transition: background-color 200ms, color 200ms, box-shadow 200ms;
+ 	-moz-transition: background-color 200ms, color 200ms, box-shadow 200ms;
+	transition: background-color 200ms, color 200ms, box-shadow 200ms;
+ 	-moz-user-select: none;
+ 	-khtml-user-select: none;
+ 	user-select: none;
+ 	cursor: pointer;
+ 	font-family: TTPro, SeguUI, Arial;
+ 	font-size: var(--p-font-size);
+ 	border-radius: var(--border-radius);
+ 	background-color: transparent;
+ 	outline: none;
+ 	border: none;
+ 	padding: calc(var(--padding-flex)/2) var(--padding-flex);
+ 	box-shadow: var(--shadow-set-black-1);
+ 	margin-top: var(--padding-flex);
+}
+button:hover{
+	background-color: #fff;
+ 	box-shadow: 0px 0px 20px -1px #fff;
+ 	color: #7D7AED;
+}
+
+button a,
+button a:active{
+	text-decoration: none;
+	color: #fff;
+}
+button:hover a{ color: #7D7AED; }
+
+button.button-white-bg-purp-text:hover{
+	background-color: #7D7AED;
+  box-shadow: 0px 0px 30px -1px #7D7AED;
+  color: #fff;
+}
+button.button-white-bg-purp-text a:active, /* активная/посещенная ссылка */ 
+button.button-white-bg-purp-text a{
+  color: #7D7AED;
+}
+
+button.button-white-bg-purp-text:hover a{ color: #fff; }
+
+button.button-white-bg-black-text:hover{
+	background-color: #000;
+  box-shadow: 0px 0px 30px -1px #7D7AED;
+  color: #fff;
+}
+button.button-white-bg-black-text a:active, /* активная/посещенная ссылка */ 
+button.button-white-bg-black-text a{
+   color: #000;
+}
+button.button-white-bg-black-text:hover a{ color: #fff; }
+
+.menu_grid{
+ background: #7D7AED;
+ display: grid;
+ grid-template-columns: 300px calc(100% - 300px);
+ z-index: 5;
+ padding: 0 5vw;
+}
+
+.menu-main{
+  list-style: none;
+  padding: 30px 300px 5px 0;
+  text-align: center;
+  background: #7D7AED;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+.menu-main li{display: inline-block;}
+.menu-main li:after{
+  color: #fff;
+  display: inline-block;
+  vertical-align:top;
+}
+.menu-main li:last-child:after{content: none;}
+.menu-main a{
+  -webkit-transition: background-color 200ms, color 200ms, box-shadow 200ms;
+  -moz-transition: background-color 200ms, color 200ms, box-shadow 200ms;
+  transition: background-color 200ms, color 200ms, box-shadow 200ms;
+  text-decoration: none;
+  font-family: TTPro, SeguUI, Arial;
+  position: relative;
+  margin: 0 0 0 12px;
+  font-size: var(--p-font-size);
+  display: inline-block;
+  padding: calc(var(--padding-flex)/2) var(--padding-flex);
+  box-shadow: var(--shadow-set-black-1);
+  border-radius: var(--border-radius);
+}
+.menu-main a, .menu-main a:visited{color: #fff}
+.menu-main a.current, .menu-main a:hover{
+  color: #7D7AED;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px -1px #fff;
+  /*top: 3px;*/
+}
+a.rightest {margin: 0 !important;}
+.menu-main a:before,
+.menu-main a:after{
+  /*content: "";
+  position: absolute;
+  height: 3px;
+  top: auto;
+  right: 50%;
+  bottom: 5px;
+  left: 50%;
+  background: #901cff;
+  transition: .8s;*/
+}
+.menu-main a:hover:before, .menu-main .current:before{left: 0;}
+.menu-main a:hover:after, .menu-main .current:after{right: 0;}
+.signin_place{
+	background: transparent;
+	padding: 30px 0 5px 0;
+	text-align: left;
+}
+.signin_place a{ margin: 0 0px 0 12px; }
+@media (max-width: 1278px){
+	.menu_grid{
+		position: absolute;
+		width: var(--menu-grid-btn-size);
+    height: var(--menu-grid-btn-size);
+    background-color: transparent;
+    background-position: center;
+		background-image: url('../../photo/white/menu_btn_w.svg');
+		z-index: 10;
+		background-size: 70% 70%;
+		background-repeat: no-repeat;
+		padding: 0;
+		margin: var(--menu-margin-top-size) 5vw;
+	}
+	.menu_grid .signin_place,
+	.menu_grid .menu-main{
+		display: none;
+	}
+	.menu_grid:hover{
+		position: fixed;
+		margin: 0;
+		width: var(--menu-grid-size);
+		height: calc(100vh - 2*var(--border-menu-size));
+		max-width: unset;
+		max-height: unset;
+		background-size: unset;
+		background-position: unset;
+		backdrop-filter: blur(35px);
+		background: transparent;
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    border-right: var(--border-menu-size) solid rgba(255, 255, 255, 0.3);
+    border-top: var(--border-menu-size) solid rgba(255, 255, 255, 0.3);
+    border-bottom: var(--border-menu-size) solid rgba(255, 255, 255, 0.3);
+    grid-template-columns: 100%;
+    grid-template-rows: min-content;
+    overflow-y: auto;
+	}
+	.menu_grid:hover .signin_place{
+		margin-top: max(10vh, 200px);
+		margin-bottom: max(calc(5vw - var(--padding-flex)), 50px);
+	}
+	.menu_grid:hover .signin_place,
+	.menu_grid:hover .menu-main{
+		display: block;
+		padding: 0;
+		background: transparent;
+	}
+	.menu_grid:hover .menu-main li{
+    display: block;
+    width: 100%;
+	}
+	.menu_grid:hover .menu-main a{ 
+		padding: calc(var(--padding-flex)/2) 0 calc(var(--padding-flex)/2) 5vw;
+		width: calc(100% - 5vw);
+		margin: 0;
+		text-align: left;
+		box-shadow: none;
+		border-bottom-left-radius: 0;
+		border-top-left-radius: 0;
+	}
+	.menu_grid:hover .current{ 
+		background-color: transparent; 
+		color: #fff;
+	}
+	.menu_grid:hover .current:hover{ 
+		background-color: #fff; 
+		color: #7D7AED;
+	}
+}
+
+.fix_style{ margin-top: var(--padding-flex); }
+
+/* для элемента input c type="checkbox" */
+input[type=checkbox]{
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  cursor: pointer;
+}
+
+    /* для элемента label, связанного с .custom-checkbox */
+input[type=checkbox]+label{
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+    /* создание в label псевдоэлемента before со следующими стилями */
+input[type=checkbox]+label::before{
+	cursor: pointer;
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 3px solid #fff;
+    border-radius: 8px;
+    margin-right: 8px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+@media (max-width:  980px){
+	input[type=checkbox]+label::before{
+			width: 25px !important;
+			height: 25px !important;
+			border: 6px solid #fff;
+			border-radius: 12px;
+		}
+}
+input[type=checkbox]:not(:disabled):not(:checked)+label:hover::before{ border-color: #fff; }
+
+    /* стили для активного чекбокса (при нажатии на него) */
+input[type=checkbox]:not(:disabled):active+label::before{
+    background-color: #fff;
+    border-color: #fff;
+}
+
+    /* стили для чекбокса, находящегося в фокусе */
+input[type=checkbox]:focus+label::before {}
+
+    /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+input[type=checkbox]:focus:not(:checked)+label::before{ border-color: #fff; }
+
+input[type=checkbox]:checked+label::before{
+	border-color: #fff;
+	background-color: #fff;
+	box-shadow: 0 0 20px #fff;
+}
+
+    /* стили для чекбокса, находящегося в состоянии disabled */
+input[type=checkbox]:disabled+label::before{ background-color: #fff; }
+
+@font-face{
+	font-family: "Inter Bold";
+	src: url("../../fonts/Inter-ExtraBold.ttf");
+}
+@font-face{
+	font-family: "Big John";
+	src: url("../../fonts/BIG_JOHN.otf");
+}
+@font-face{
+	font-family: "SeguUI";
+	src: url("../../fonts/seguibl.ttf");
+}
+@font-face{
+	font-family: "TTPro";
+	src: url("../../fonts/TTNormsProMedium.ttf");
+}
+@font-face{
+	font-family: "TTProBld";
+	src: url("../../fonts/TTNormsPro-Bold.ttf");
+}
+@font-face{
+	font-family: "Aileron";
+	src: url("../../fonts/Aileron-Regular.ttf");
+}

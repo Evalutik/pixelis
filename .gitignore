@@ -1,0 +1,38 @@
+# OS / Editor
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log
+error_log
+
+# Generated pixel data
+/pixelsDB/
+/bronpix/
+
+# Temporary files
+tmp/
+cache/
+
+# Node deps
+node_modules/
+
+# Composer
+/vendor/*
+!vendor/*.php
+
+# Large media (consider moving large user uploads out of repo)
+# Uncomment to ignore all photos
+# /photo/
+
+# SQL dumps
+*.sql
+
+# Windows
+desktop.ini

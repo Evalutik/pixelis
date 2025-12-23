@@ -1,0 +1,16 @@
+# Avoid exporting/generated runtime dirs in archives
+/pixelsDB/ export-ignore
+/bronpix/ export-ignore
+
+# Treat common binary formats as binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+
+# Text normalization
+*.php text eol=crlf
+*.css text eol=crlf
+*.js  text eol=crlf
+*.html text eol=crlf

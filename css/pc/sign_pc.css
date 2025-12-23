@@ -1,0 +1,347 @@
+*{
+	margin: 0;
+	padding: 0;
+	top: 0;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+::selection{background: rgba(0, 0, 0, 1 ); color: #fff;}
+::-moz-selection {background: rgba(0, 0, 0, 1 ); color: #fff;}
+::-webkit-selection {background: rgba(0, 0, 0, 1 ); color: #fff;}
+
+::-webkit-scrollbar {
+  width: 3px;
+  background-color: #7D7AED;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+}
+
+input::-moz-placeholder { color: rgba(255, 255, 255, 0.5); }
+input::-webkit-input-placeholder { color: rgba(255, 255, 255, 0.5); }	
+
+body{
+	overflow-x: hidden;
+	font-family: TTPro, SeguUI, Arial;	
+	font-size: 1.2rem;
+	height: 100vh;
+	width: 100vw;
+	background: linear-gradient(-45deg, #901cff, #7D7AED, #9d8eed,  #7D7AED);
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+	background-size: 150% 150%;
+}
+
+h1{
+	font-size: 5rem;
+	line-height: 0.84em;	
+	font-family: Inter Bold, Big John, TTPro, SeguUI, Arial;
+}
+
+h2{
+	font-size: 3rem;
+	line-height: 1em;	
+	font-family: Inter Bold, Big John, TTPro, SeguUI, Arial;
+}
+
+
+h3{
+	font-size: 2rem;
+	line-height: 1em;	
+	font-family: Inter Bold, Big John, TTPro, SeguUI, Arial;	
+}
+
+h4{
+	font-size: 1.2rem;
+	font-family: TTPro, SeguUI, Arial;	
+	font-weight: normal;
+}
+
+h5{
+	font-size: 1.2rem;
+	font-family: TTPro, SeguUI, Arial;
+	font-weight: normal;
+	
+}
+
+p{
+	font-size: 1.2rem;	
+	font-family: TTPro, SeguUI, Arial;
+	font-weight: normal;	
+	color: #fff;
+}
+
+.main_form{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	flex-direction: column;
+	-webkit-transition: all 200ms;
+	-moz-transition: all 200ms;
+	transition: all 200ms;
+}
+.main_form h2{
+	color: #fff;
+	margin-bottom: 100px;
+}
+form{
+	display: flex;
+	flex-direction: column;
+	width: 400px;
+	padding: 20px;
+	background-color: #7D7AED;
+	box-shadow: 0px 0px 10px -5px #000;
+	border-radius: 20px;
+	position: relative;
+}
+
+p.msg{
+	margin-bottom: 15px;
+}
+
+label{
+	margin-left: 10px;
+	color: #fff;
+}
+input{
+	font-size: 1.2rem;
+	padding: 5px 10px 5px 10px;
+	margin: 5px 0px 15px 0px;
+	border: none;
+	border-radius: 20px;
+	outline: none;
+	background-color: transparent;
+	color: #fff;
+	position: relative;
+	-webkit-transition: box-shadow 200ms;
+	-moz-transition: box-shadow 200ms;
+	transition: box-shadow 200ms;
+	font-family: TTPro, SeguUI, Arial;
+}
+
+input:hover,
+input:focus{
+	box-shadow: 0px 0px 10px -5px #000;
+}
+button{
+ -webkit-transition: background-color 200ms, color 200ms, box-shadow 200ms;
+ -moz-transition: background-color 200ms, color 200ms, box-shadow 200ms;
+ transition: background-color 200ms, color 200ms, box-shadow 200ms;
+ -moz-user-select: none;
+ -khtml-user-select: none;
+ user-select: none;
+ cursor: pointer;
+ font-family: TTPro, SeguUI, Arial;
+ font-size: 1.2rem;
+ border-radius: 20px;
+ background-color: transparent;
+ outline: none;
+ border: none;
+ padding: 10px 20px;
+ background-color: #7D7AED;
+ box-shadow: 0px 0px 10px -5px #000;
+ color: #fff;
+}
+button:hover{
+ background-color: #fff;
+ box-shadow: 0px 0px 20px -1px #fff;
+ color: #7D7AED;
+}
+button:disabled:hover{
+	background-color: #7D7AED;
+	box-shadow: 0px 0px 10px -5px #000;
+	color: #fff;
+	cursor: not-allowed;
+}
+.afterform{
+	margin: 20px 0;
+	width: 440px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 15px;
+}
+
+.for-eye {
+	position: relative;
+}
+.for-eye input{
+	width: calc(100% - 20px);
+}
+
+.eye{
+	position: absolute;
+	width: 25px;
+	left: 365px;
+	top: 8px;
+	z-index: 5;
+	transition: all 200ms;
+	cursor: pointer;
+	user-select: none;
+}
+.eye.active{
+filter: drop-shadow(0px 0px 5px #fff);
+}
+
+form p{
+	margin: 0 0 0 10px;
+}
+.wrong-char-nick,
+.check-nick,
+.good-nick,
+.wrong-nick,
+.to-small,
+.to-easy,
+.not-match,
+.no-paste,
+.to-long,
+.no-checked{
+	display: none;
+	margin-bottom: 15px;
+}
+.wrong-char-nick.active,
+.check-nick.active,
+.good-nick.active,
+.wrong-nick.active,
+.to-small.active,
+.to-easy.active,
+.not-match.active,
+.no-paste.active,
+.to-long.active,
+.no-checked.active{
+	display: block;
+}
+.wrong-nick.active.shadow,
+.no-paste.active.shadow{
+	transition: all 200ms;
+	filter: drop-shadow(0 0 5px #fff);
+}
+.to-easy{
+	margin-bottom: 15px;
+}
+.check_line{
+	position: relative;
+	margin-bottom: 15px;
+}
+input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+    /* для элемента label, связанного с .custom-checkbox */
+input[type=checkbox]+label {
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+    /* создание в label псевдоэлемента before со следующими стилями */
+input[type=checkbox]+label::before {
+	cursor: pointer;
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 3px solid #fff;
+    border-radius: 8px;
+    margin-right: 8px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+
+    /* стили при наведении курсора на checkbox */
+input[type=checkbox]:not(:disabled):not(:checked)+label:hover::before {
+    border-color: #fff;
+    box-shadow: 0 0 20px #fff;
+}
+
+    /* стили для активного чекбокса (при нажатии на него) */
+input[type=checkbox]:not(:disabled):active+label::before {
+    background-color: #fff;
+    border-color: #fff;
+}
+
+    /* стили для чекбокса, находящегося в фокусе */
+input[type=checkbox]:focus+label::before {
+
+}
+
+/*прожатый*/
+input[type=checkbox]:checked+label::before {
+	border-color: #fff;
+	background-color: #fff;
+	box-shadow: 0 0 20px #fff;
+}
+/* стили для чекбокса, находящегося в состоянии disabled */
+input[type=checkbox]:disabled+label::before {
+  background-color: #eee;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+@font-face{
+	font-family: "Inter Bold";
+	src: url("../../fonts/Inter-ExtraBold.ttf");
+}
+@font-face{
+	font-family: "Big John";
+	src: url("../../fonts/BIG_JOHN.otf");
+}
+@font-face{
+	font-family: "SeguUI";
+	src: url("../../fonts/seguibl.ttf");
+}
+@font-face{
+	font-family: "TTPro";
+	src: url("../../fonts/TTNormsProMedium.ttf");
+}
+@font-face{
+	font-family: "TTProBld";
+	src: url("../../fonts/TTNormsPro-Bold.ttf");
+}
+@font-face{
+	font-family: "Aileron";
+	src: url("../../fonts/Aileron-Regular.ttf");
+}

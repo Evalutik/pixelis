@@ -1,0 +1,17 @@
+{
+  "name": "yourname/pixel-board",
+  "description": "Small PHP pixel board app",
+  "type": "project",
+  "require": {
+    "php": ">=7.4"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.0",
+    "phpstan/phpstan": "^1.0",
+    "phpunit/phpunit": "^10"
+  },
+  "scripts": {
+    "fix": "php-cs-fixer fix",
+    "analyse": "phpstan analyse src --level=max"
+  }
+}
