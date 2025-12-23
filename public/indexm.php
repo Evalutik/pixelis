@@ -11,15 +11,16 @@
 
 	<body>
 		<?php
-			$fi = new FilesystemIterator("pixelsDB", FilesystemIterator::SKIP_DOTS);
+			$fi = new FilesystemIterator(DATA_DIR . '/pixelsDB', FilesystemIterator::SKIP_DOTS);
 			$countboughtpix = iterator_count($fi);
 			if ($countboughtpix == 1000000) {
 				$countboughtpix = '1 000 000';	
 			} else if ($countboughtpix >= 1000) {
 				$countboughtpix = intdiv($countboughtpix, 1000).' '.($countboughtpix % 1000);
 			}
-			require_once 'cookie/isacceptcookie.php';
-			require_once 'vendor/csrf.php';
+			require_once __DIR__ . '/../cookie/isacceptcookie.php';
+			// csrf functions are autoloaded by bootstrap
+			// require_once __DIR__ . '/../vendor/csrf.php';
 		?>
 		<script async>
 				$(function() {
@@ -259,10 +260,10 @@
 			
 		</script>
 		<?php 
-			if (file_exists('activezki')) 
+			if (file_exists(DATA_DIR . '/activezki')) 
 			{ 
 				$DelTime = 240;
-				foreach (new DirectoryIterator('activezki') as $fileInfo) 
+				foreach (new DirectoryIterator(DATA_DIR . '/activezki') as $fileInfo) 
 				{
 				 if ($fileInfo->isDot()) { continue; } 
 				 	if ( ($fileInfo->isFile() ) && ( time() - $fileInfo->getMTime() >= $DelTime) ) { 
@@ -270,10 +271,10 @@
 				 	} 
 				} 
 			}
-			if (file_exists('bronpix')) 
+			if (file_exists(DATA_DIR . '/bronpix')) 
 			{ 
 				$DelTime = 240;
-				foreach (new DirectoryIterator('bronpix') as $fileInfo2) 
+				foreach (new DirectoryIterator(DATA_DIR . '/bronpix') as $fileInfo2) 
 				{
 				 if ($fileInfo2->isDot()) { continue; } 
 				 	if ( ($fileInfo2->isFile() ) && ( time() - ($fileInfo2->getMTime() ) >= $DelTime) ) { 

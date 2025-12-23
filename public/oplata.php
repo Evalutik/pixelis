@@ -9,10 +9,11 @@
 	</head>
 	<body>	
 		<?php 
-			if (file_exists('activezki')) 
+			require_once __DIR__ . '/../bootstrap.php';
+			if (file_exists(DATA_DIR . '/activezki')) 
 			{ 
 				$DelTime = 240;
-				foreach (new DirectoryIterator('activezki') as $fileInfo) 
+				foreach (new DirectoryIterator(DATA_DIR . '/activezki') as $fileInfo) 
 				{
 				 if ($fileInfo->isDot()) { continue; } 
 				 	if ( ($fileInfo->isFile() ) && ( time() - $fileInfo->getMTime() >= $DelTime) ) { 
@@ -20,10 +21,10 @@
 				 	} 
 				} 
 			}
-			if (file_exists('bronpix')) 
+			if (file_exists(DATA_DIR . '/bronpix')) 
 			{ 
 				$DelTime = 240;
-				foreach (new DirectoryIterator('bronpix') as $fileInfo2) 
+				foreach (new DirectoryIterator(DATA_DIR . '/bronpix') as $fileInfo2) 
 				{
 				 if ($fileInfo2->isDot()) { continue; } 
 				 	if ( ($fileInfo2->isFile() ) && ( time() - ($fileInfo2->getMTime() ) >= $DelTime) ) { 
@@ -37,7 +38,7 @@
 			date_default_timezone_set('Europe/Moscow');
 			session_start();
 			$flag = 0;
-			$countFiles = scandir('activezki');
+			$countFiles = scandir(DATA_DIR . '/activezki');
 			$countnmbr = count($countFiles) - 2;
 			// Only process POST requests below and validate CSRF token
 			if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -53,7 +54,7 @@
 				$checkX1 = 0 + $checkX1;
 				$checkY1 = 0 + $checkY1;
 
-				if ( (isset( $_POST['buyinpbtnname'] )) && ( $countnmbr < 5) && (!( file_exists('pixelsDB/'.$checkX1.'-'.$checkY1.'.txt')) )  &&! (( file_exists('bronpix/'.$checkX1.'-'.$checkY1.'.txt')) ) && ( $flag == 0) && (ctype_digit($_POST['buyinpx'])) && (ctype_digit($_POST['buyinpy'])) && ($checkX1 >= 0 ) && ( $checkY1 >= 0 ) && ($checkX1 <=999 ) && ( $checkY1 <=999 )): 
+				if ( (isset( $_POST['buyinpbtnname'] )) && ( $countnmbr < 5) && (!( file_exists(DATA_DIR . '/pixelsDB/'.$checkX1.'-'.$checkY1.'.txt')) )  &&! (( file_exists(DATA_DIR . '/bronpix/'.$checkX1.'-'.$checkY1.'.txt')) ) && ( $flag == 0) && (ctype_digit($_POST['buyinpx'])) && (ctype_digit($_POST['buyinpy'])) && ($checkX1 >= 0 ) && ( $checkY1 >= 0 ) && ($checkX1 <=999 ) && ( $checkY1 <=999 )): 
 				?> 
 				
 				<h1>Создана оплата</h1> //форма оплаты
@@ -62,9 +63,9 @@
 					// при нажатии на кнопку делать
 					date_default_timezone_set('Europe/Moscow');
 					$codenmb = date('Ymd-h-i-s', time()).'-'.random_int(100, 999); 			
-					$fb = fopen('bronpix/'.$checkX1.'-'.$checkY1.'.txt', 'w');
+					$fb = fopen(DATA_DIR . '/bronpix/'.$checkX1.'-'.$checkY1.'.txt', 'w');
 					fclose($fb); 			
-					$fname = 'activezki/'.$codenmb.'.txt';
+					$fname = DATA_DIR . '/activezki/'.$codenmb.'.txt';
 					$fw = fopen($fname, 'w');
 					fwrite($fw, $checkX1."\r\n");
 					fwrite($fw, $checkY1."\r\n");
@@ -76,7 +77,7 @@
 					$flag = 1;
 				endif; // оплата
 
-				if ( (isset( $_POST['buyinpbtnname'] )) && ( $countnmbr < 5) && (!( file_exists('pixelsDB/'.$checkX1.'-'.$checkY1.'.txt')) ) && ( file_exists('bronpix/'.$checkX1.'-'.$checkY1.'.txt')) && ( $flag == 0)  ) : 
+			if ( (isset( $_POST['buyinpbtnname'] )) && ( $countnmbr < 5) && (!( file_exists(DATA_DIR . '/pixelsDB/'.$checkX1.'-'.$checkY1.'.txt')) ) && ( file_exists(DATA_DIR . '/bronpix/'.$checkX1.'-'.$checkY1.'.txt')) && ( $flag == 0)  ) : 
 				?> 
 				<div class="bropl">
 					<div class="opl-er-main-text">
@@ -95,7 +96,7 @@
 				$flag = 1;
 				endif; // в броне
 
-				if ( (isset( $_POST['buyinpbtnname'] )) && ( $countnmbr < 5) && ( file_exists('pixelsDB/'.$checkX1.'-'.$checkY1.'.txt')) && ( $flag == 0) ) : 
+			if ( (isset( $_POST['buyinpbtnname'] )) && ( $countnmbr < 5) && ( file_exists(DATA_DIR . '/pixelsDB/'.$checkX1.'-'.$checkY1.'.txt')) && ( $flag == 0) ) : 
 				?> 
 				<div class="btopl">
 					<div class="opl-er-main-text">
@@ -137,7 +138,7 @@
 		?>
 
 		<?php
-			if ( (isset( $_POST['buyinpbtnname'] )) && ( $countnmbr < 5) && (!( file_exists('pixelsDB/'.$checkX1.'-'.$checkY1.'.txt')) ) && ( file_exists('bronpix/'.$checkX1.'-'.$checkY1.'.txt')) && ( $flag == 0)  ) : 
+			if ( (isset( $_POST['buyinpbtnname'] )) && ( $countnmbr < 5) && (!( file_exists(DATA_DIR . '/pixelsDB/'.$checkX1.'-'.$checkY1.'.txt')) ) && ( file_exists(DATA_DIR . '/bronpix/'.$checkX1.'-'.$checkY1.'.txt')) && ( $flag == 0)  ) : 
 		?> 
 			<div class="bropl">
 				<div class="opl-er-main-text">
@@ -160,7 +161,7 @@
 
 
 		<?php
-			if ( (isset( $_POST['buyinpbtnname'] )) && ( $countnmbr < 5) && ( file_exists('pixelsDB/'.$checkX1.'-'.$checkY1.'.txt')) && ( $flag == 0) ) : 
+			if ( (isset( $_POST['buyinpbtnname'] )) && ( $countnmbr < 5) && ( file_exists(DATA_DIR . '/pixelsDB/'.$checkX1.'-'.$checkY1.'.txt')) && ( $flag == 0) ) : 
 		?> 
 			<div class="btopl">
 				<div class="opl-er-main-text">

@@ -2,8 +2,9 @@
 $inpX = $_GET['pixcrdX'];
 $inpY = $_GET['pixcrdY'];
 $fnameowner = $inpX.'-'.$inpY.'.txt';
-if (file_exists('pixelsDB/'.$fnameowner)) {
-	$show_info = file('pixelsDB/'.$fnameowner);
+require_once __DIR__ . '/bootstrap.php';
+if (file_exists(DATA_DIR . '/pixelsDB/'.$fnameowner)) {
+	$show_info = file(DATA_DIR . '/pixelsDB/'.$fnameowner);
 	if ($show_info[0] != ''){
 		$owner = $show_info[0];
 	} else {

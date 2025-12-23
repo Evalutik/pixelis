@@ -1,6 +1,8 @@
 <?php
 	session_start();
+	require_once __DIR__ . '/bootstrap.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="EN">
 	<head>
@@ -36,10 +38,10 @@
 		</div>
 		<?php include "footerpc.html" ?>
 		<?php 
-			if (file_exists('activezki')) 
+			if (file_exists(DATA_DIR . '/activezki')) 
 			{ 
 				$DelTime = 240;
-				foreach (new DirectoryIterator('activezki') as $fileInfo) 
+				foreach (new DirectoryIterator(DATA_DIR . '/activezki') as $fileInfo) 
 				{
 				 if ($fileInfo->isDot()) { continue; } 
 				 	if ( ($fileInfo->isFile() ) && ( time() - $fileInfo->getMTime() >= $DelTime) ) { 
@@ -47,10 +49,10 @@
 				 	} 
 				} 
 			}
-			if (file_exists('bronpix')) 
+			if (file_exists(DATA_DIR . '/bronpix')) 
 			{ 
 				$DelTime = 240;
-				foreach (new DirectoryIterator('bronpix') as $fileInfo2) 
+				foreach (new DirectoryIterator(DATA_DIR . '/bronpix') as $fileInfo2) 
 				{
 				 if ($fileInfo2->isDot()) { continue; } 
 				 	if ( ($fileInfo2->isFile() ) && ( time() - ($fileInfo2->getMTime() ) >= $DelTime) ) { 

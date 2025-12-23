@@ -2,6 +2,8 @@
 use PHPUnit\Framework\TestCase;
 use GuzzleHttp\Client;
 
+require_once __DIR__ . '/../bootstrap.php';
+
 class ApiTest extends TestCase {
     public function test_pixel_api_not_found(): void {
         $client = new Client(['base_uri' => 'http://localhost:8080/']);
@@ -12,7 +14,7 @@ class ApiTest extends TestCase {
     public function test_pixel_api_success(): void {
         // create a sample pixel file
         $x = 5; $y = 6;
-        $fname = "pixelsDB/{$x}-{$y}.txt";
+        $fname = DATA_DIR . "/pixelsDB/{$x}-{$y}.txt";
         file_put_contents($fname, "#ff0000\nowner\nhttps://example.test/\nHello\n");
         $client = new Client(['base_uri' => 'http://localhost:8080/']);
         $res = $client->get('api/pixel.php?x=' . $x . '&y=' . $y);

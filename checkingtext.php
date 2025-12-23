@@ -2,8 +2,9 @@
 $inpX = $_GET['pixcrdX'];
 $inpY = $_GET['pixcrdY'];
 $fnametext = $inpX.'-'.$inpY.'.txt';
-if (file_exists('pixelsDB/'.$fnametext)) {
-	$show_info = file('pixelsDB/'.$fnametext);
+require_once __DIR__ . '/bootstrap.php';
+if (file_exists(DATA_DIR . '/pixelsDB/'.$fnametext)) {
+	$show_info = file(DATA_DIR . '/pixelsDB/'.$fnametext);
 	if ((trim($show_info[2], " ") != '') || (trim($show_info[3], " ") != '') || (trim($show_info[4], " ") != '') || (trim($show_info[5], " ") != '') || (trim($show_info[6], " ") != '')){
 		$text = array_diff(array_slice($show_info, 2, 5), array("\r\n", "\r", "\n", " ", ' '));
 		echo implode('<br>', $text);

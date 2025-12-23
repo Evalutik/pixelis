@@ -13,8 +13,7 @@ Thumbs.db
 error_log
 
 # Generated pixel data
-/pixelsDB/
-/bronpix/
+/data/
 /pixelsCL/colors.txt
 
 # Temporary files

@@ -3,14 +3,14 @@ use PHPUnit\Framework\TestCase;
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
 
-require_once __DIR__ . '/../vendor/helpers.php';
+require_once __DIR__ . '/../bootstrap.php';
 
 class IntegrationTest extends TestCase {
     protected static $baseUrl = 'http://localhost:8080/';
 
     public static function setUpBeforeClass(): void {
         // Ensure directories exist and are empty
-        $dirs = ['activezki', 'bronpix', 'pixelsDB'];
+        $dirs = [DATA_DIR . '/activezki', DATA_DIR . '/bronpix', DATA_DIR . '/pixelsDB'];
         foreach ($dirs as $d) {
             if (!file_exists($d)) mkdir($d);
             $files = glob($d . '/*');
@@ -71,11 +71,11 @@ class IntegrationTest extends TestCase {
         $this->assertStringContainsString('Создана оплата', $body);
 
         // Check that bronpix file exists
-        $bron = sprintf('bronpix/%d-%d.txt', $px, $py);
+        $bron = sprintf(DATA_DIR . '/bronpix/%d-%d.txt', $px, $py);
         $this->assertFileExists($bron);
 
         // And an activezki file exists
-        $actives = glob('activezki/*.txt');
+        $actives = glob(DATA_DIR . '/activezki/*.txt');
         $this->assertNotEmpty($actives);
     }
 
