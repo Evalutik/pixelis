@@ -17,7 +17,7 @@ class IntegrationTest extends TestCase {
             foreach ($files as $f) unlink($f);
         }
         // Try running db setup if available
-        @passthru('php vendor/setup_db.php --seed=itest:itest');
+        @passthru('php src/setup_db.php --seed=itest:itest');
     }
 
     public function test_register_and_login_and_buy_flow(): void {
@@ -39,14 +39,14 @@ class IntegrationTest extends TestCase {
             'checkbox_1' => 'on',
             '_csrf' => $csrf
         ];
-        $res = $client->post('vendor/registration.php', ['form_params' => $form]);
+        $res = $client->post('actions/registration.php', ['form_params' => $form]);
         // After registration, message is displayed on signin page (we follow redirects)
         $this->assertStringContainsString('Congratulations', (string)$res->getBody());
 
         // 2) Login
         $res = $client->get('signinpc.php');
         $csrf = $this->extractCsrf((string)$res->getBody());
-        $res = $client->post('vendor/authorization.php', ['form_params' => ['nick' => $nick, 'password' => $password, '_csrf' => $csrf]]);
+        $res = $client->post('actions/authorization.php', ['form_params' => ['nick' => $nick, 'password' => $password, '_csrf' => $csrf]]);
         // Should end up on profile page
         $profile = $client->get('profile.php');
         $this->assertStringContainsString($nick, (string)$profile->getBody());

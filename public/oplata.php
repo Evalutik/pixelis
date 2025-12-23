@@ -42,7 +42,7 @@
 			$countnmbr = count($countFiles) - 2;
 			// Only process POST requests below and validate CSRF token
 			if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-				require_once 'vendor/csrf.php';
+			require_once __DIR__ . '/../src/csrf.php';
 				if (!csrf_validate($_POST['_csrf'] ?? '')) {
 					if (session_status() == PHP_SESSION_NONE) session_start();
 					$_SESSION['message'] = 'Invalid request.';

@@ -11,7 +11,7 @@ down:
 	docker-compose down
 
 setup-db:
-	docker-compose exec php php vendor/setup_db.php --seed=dev:dev
+	docker-compose exec php php src/setup_db.php --seed=dev:dev
 
 test:
 	vendor/bin/phpunit --configuration phpunit.xml

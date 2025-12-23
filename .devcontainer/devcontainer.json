@@ -3,7 +3,7 @@
   "dockerComposeFile": "../docker-compose.yml",
   "service": "php",
   "workspaceFolder": "/var/www/html",
-  "postCreateCommand": "composer install --no-interaction && php vendor/setup_db.php --seed=dev:dev",
+  "postCreateCommand": "composer install --no-interaction && php src/setup_db.php --seed=dev:dev",
   "forwardPorts": [8080],
   "extensions": ["bmewburn.vscode-intelephense-client", "bmewburn.vscode-intelephense-client"],
   "settings": {

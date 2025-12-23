@@ -22,7 +22,7 @@
 
 		<div class="menu_grid hiden">
 			<div class="signin_place menu-main">
-				<?php require_once 'vendor/choosesignmenubuttons.php'; ?>
+				<?php require_once __DIR__ . '/src/choosesignmenubuttons.php'; ?>
 			</div>
 			<ul class="menu-main">
 			  	<li><a href="index.php" class="rightest">Home</a></li>

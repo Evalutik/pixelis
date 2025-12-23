@@ -1,7 +1,7 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__ . '/../vendor/helpers.php';
+require_once __DIR__ . '/../src/helpers.php';
 
 class HelpersTest extends TestCase {
     public function testEscape() {

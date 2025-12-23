@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	require_once 'vendor/checksessiontime.php';
+	require_once __DIR__ . '/src/checksessiontime.php';
 	if ( (!$_SESSION['user']) || (!$_SESSION['user']['password']) ){
 		header('Location: signin.php');
 	}
@@ -18,7 +18,7 @@
 	<?php require_once 'cookie/isacceptcookie.php'; ?>
 	<div class="menu_grid">
 		<div class="signin_place menu-main">
-			<li><a href="vendor/signout.php" class="rightest">Sign Out</a></li>
+				<li><a href="actions/signout.php" class="rightest">Sign Out</a></li>
 		</div>
 		<ul class="menu-main">
 			<li><a href="index.php" class="rightest">Home</a></li>

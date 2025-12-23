@@ -2,7 +2,7 @@
 if ($_SESSION['user']) {
 	echo 
 	'<li>
-		<a href="vendor/signout.php" class="rightest">Sign Out</a>
+		<a href="actions/signout.php" class="rightest">Sign Out</a>
 	</li>
 	<li>
 		<a href="profile.php">Account</a>

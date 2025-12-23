@@ -48,7 +48,7 @@ Quickstart (recommended: Docker)
 
 3. Initialize DB and seed a test user:
 
-   docker-compose exec php php vendor/setup_db.php --seed=dev:dev
+   docker-compose exec php php src/setup_db.php --seed=dev:dev
 
 4. Open http://localhost:8080 and explore.  Use the Sign Up form to create an account and try the purchase flow.
 
@@ -83,7 +83,7 @@ Why this project shows my skills (copy to CV/interview)
 
 How to demo this project in interviews
 -------------------------------------
-- Start the app: `docker-compose up -d --build` and initialize the DB: `docker-compose exec php php vendor/setup_db.php --seed=dev:dev`.  
+- Start the app: `docker-compose up -d --build` and initialize the DB: `docker-compose exec php php src/setup_db.php --seed=dev:dev`.  
 - Sign up, sign in, and buy a pixel (Home → Buy pixel) — show the `activezki/` reservation file appears and then `bronpix/` entry.  
 - Show the API quickly: `curl "http://localhost:8080/api/pixel.php?x=5&y=6"` (returns pixel metadata if present).  
 
@@ -131,7 +131,7 @@ Run with Docker (recommended)
 - The site will be served at http://localhost:8080
 - Create the DB schema and an optional seed user inside the PHP container:
 
-  docker-compose exec php php vendor/setup_db.php --seed=dev:dev
+  docker-compose exec php php src/setup_db.php --seed=dev:dev
 
 - To stop and remove containers:
 
@@ -152,8 +152,8 @@ Notes
 
 - If you need to run a specific PHP file, use the URL like http://localhost/about.php (or http://localhost:8080/about.php when using Docker).
 ----------------------------------------------
-- Do not commit credentials. Move DB credentials to a `.env` file and use `vlucas/phpdotenv` or environment variables. (I added a `.env.example` and `vendor/connect.php` now reads env vars if present.)
-- Several SQL queries currently use string interpolation and were vulnerable to SQL injection. They should be converted to prepared statements (I updated `vendor/authorization.php`, `vendor/registration.php`, `vendor/isnickwrong.php` to use prepared statements).
+- Do not commit credentials. Move DB credentials to a `.env` file and use `vlucas/phpdotenv` or environment variables. (I added a `.env.example` and `src/connect.php` now reads env vars if present.)
+- Several SQL queries currently use string interpolation and were vulnerable to SQL injection. They should be converted to prepared statements (I updated `actions/authorization.php`, `actions/registration.php`, `actions/isnickwrong.php` to use prepared statements).
 - Add CSRF tokens for POST forms (sign-up/sign-in/checkout). I added a small helper `vendor/csrf.php` with `csrf_token()`, `csrf_input()` and `csrf_validate()`; include it in form pages and validate in handlers.
 - Sanitize all output with `htmlspecialchars()` (or use a templating engine) to avoid XSS when rendering user-supplied data.
 - Add `.gitignore` to avoid committing generated files (pixelsDB/, bronpix/, logs) and large image files in `photo/` (I added a `.gitignore` and `.gitattributes`).
@@ -170,9 +170,9 @@ I've created a local `.env` file (ignored by git) with default local DB credenti
 
 Quick setup script
 ------------------
-Run `php vendor/setup_db.php` to create the `main` database and `user` table automatically. To create a seed user for quick testing run:
+Run `php src/setup_db.php` to create the `main` database and `user` table automatically. To create a seed user for quick testing run:
 
-  php vendor/setup_db.php --seed=testuser:testpass
+  php src/setup_db.php --seed=testuser:testpass
 
 Repository cleanup notes
 ------------------------

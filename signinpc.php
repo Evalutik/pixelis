@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	require_once 'vendor/csrf.php';
+	require_once __DIR__ . '/src/csrf.php';
 	if ( ($_SESSION['user']) && ($_SESSION['user']['password']) ){
 		header('Location: profile.php');
 	}
@@ -18,7 +18,7 @@
 	<?php require_once 'cookie/isacceptcookie.php'; ?>
 	<div class="main_form">
 		<h2>Welcome back!</h2>
-		<form action="vendor/authorization.php" method="POST">
+			<form action="actions/authorization.php" method="POST">
 			<?php
 				if ($_SESSION['message']) {
 					echo '<p class="msg">' . $_SESSION['message'] .'</p>';

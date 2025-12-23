@@ -1,5 +1,5 @@
 <?php
-// Simple DB setup script. Run with: php vendor/setup_db.php [--seed=nick:password]
+// Simple DB setup script. Run with: php src/setup_db.php [--seed=nick:password]
 // It reads DB_HOST, DB_USER, DB_PASS, DB_NAME from .env or environment variables.
 
 $envFile = dirname(__DIR__) . '/.env';

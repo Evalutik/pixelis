@@ -21,7 +21,7 @@
 			}
 			require_once __DIR__ . '/../cookie/isacceptcookie.php';
 			// csrf functions are autoloaded by bootstrap
-			// require_once __DIR__ . '/../vendor/csrf.php';
+			// CSRF already available via bootstrap/autoload
 		?>
 		<script async>
 				$(function() {

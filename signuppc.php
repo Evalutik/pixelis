@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	require_once 'vendor/csrf.php';
+	require_once __DIR__ . '/src/csrf.php';
 	if ( ($_SESSION['user']) && ($_SESSION['user']['password']) ){
 		header('Location: profile.php');
 	}
@@ -18,7 +18,7 @@
 	<?php require_once 'cookie/isacceptcookie.php'; ?>
 	<div class="main_form">
 		<h2>Hello, Friend!</h2>
-		<form action="vendor/registration.php" method="POST">
+			<form action="actions/registration.php" method="POST">
 			<?php
 				if ($_SESSION['message']) {
 					echo '<p class="msg">' . $_SESSION['message'] .'</p>';
@@ -157,7 +157,7 @@
 		}
 		function isFreeNow(){
 			let xhr = new XMLHttpRequest();
-		    xhr.open('GET', 'vendor/isnickwrong.php?' + 'user_to_check=' + document.getElementById('check-nick').value);
+		    xhr.open('GET', 'actions/isnickwrong.php?' + 'user_to_check=' + document.getElementById('check-nick').value);
 		    xhr.onreadystatechange = function(){
 		        if(xhr.readyState === 4 && xhr.status === 200){
 		            let answ = xhr.responseText;

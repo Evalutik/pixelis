@@ -1,5 +1,5 @@
 # Example color file (do NOT include full dataset)
-# Use vendor/setup_db.php or other generator to produce full list
+# Use src/setup_db.php or other generator to produce full list
 FFFFFF
 000000
 FF0000

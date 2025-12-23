@@ -1,7 +1,7 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__ . '/../vendor/csrf.php';
+require_once __DIR__ . '/../src/csrf.php';
 
 class CSRFTest extends TestCase {
     protected function setUp(): void {
