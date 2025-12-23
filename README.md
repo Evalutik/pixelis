@@ -1,17 +1,84 @@
-# Pixelis — Pixel board marketplace
+# Pixelis — A 1,000 × 1,000 pixel marketplace
 
-[![CI](https://github.com/<your-org-or-username>/pixelis/actions/workflows/php.yml/badge.svg)](https://github.com/<your-org-or-username>/pixelis/actions/workflows/php.yml)
-[![Security Scan](https://github.com/<your-org-or-username>/pixelis/actions/workflows/security.yml/badge.svg)](https://github.com/<your-org-or-username>/pixelis/actions/workflows/security.yml)
-[![Codecov](https://codecov.io/gh/<your-org-or-username>/pixelis/branch/main/graph/badge.svg?token=)](https://codecov.io/gh/<your-org-or-username>/pixelis)
+[![CI](https://github.com/Evalutik/pixelis/actions/workflows/php.yml/badge.svg)](https://github.com/Evalutik/pixelis/actions/workflows/php.yml)
+[![Security Scan](https://github.com/Evalutik/pixelis/actions/workflows/security.yml/badge.svg)](https://github.com/Evalutik/pixelis/actions/workflows/security.yml)
+[![Codecov](https://codecov.io/gh/Evalutik/pixelis/branch/main/graph/badge.svg)](https://codecov.io/gh/Evalutik/pixelis)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-Project: Pixel Board (local)
+Pixelis is a lightweight platform that lets users buy and sell pixels on a shared 1000×1000 canvas — each pixel acts as a tiny ad or message and can be owned, linked, and described by its purchaser.
 
-Short description
------------------
-This is a small PHP-based pixel board application (mobile/pc variants included). It uses MySQL and flat-file storage (pixelsDB/, bronpix/) for pixel reservations and purchases.
+Why Pixelis?  
+- Visual, viral, and simple: users paint a piece of the shared field and leave a message, link, or brand.  
+- Marketplace-ready: integrated buy/checkout flow with reservation, ownership, and simple dispute avoidance (short reservation windows).  
+- Small footprint: uses flat-files for pixel storage (fast, easy to inspect) and MySQL for users.
 
-**API**: A simple API endpoint is available at `/api/pixel.php?x=<x>&y=<y>` (see `openapi.yaml` for spec).
+Demo / Showcase
+---------------
+Include a short GIF or screenshot here to make the repo pop:
 
+![Demo placeholder](docs/demo.gif)
+
+Quick highlights
+----------------
+- 1,000 × 1,000 pixel canvas (1,000,000 pixels)
+- Buy/reserve flow with active reservation files and purchase finalization
+- User signup / sign-in with secure password hashing
+- CSRF protection and prepared statements to mitigate web security risks
+- Dockerized developer environment + easy local setup script
+- Basic public API and OpenAPI spec (see `api/pixel.php` and `openapi.yaml`)
+
+Tech stack
+----------
+- PHP 8 (recommended), MySQL, plain-file pixel storage
+- Composer for dependency management
+- GitHub Actions for CI (lint, static analysis, unit/integration tests)
+- PHPUnit for unit & integration tests, Guzzle for integration test HTTP requests
+- Gitleaks in CI to detect accidental secrets
+
+Quickstart (recommended: Docker)
+--------------------------------
+1. Clone:
+
+   git clone https://github.com/Evalutik/pixelis.git
+   cd pixelis
+
+2. Start services (Docker Compose):
+
+   docker-compose up -d --build
+
+3. Initialize DB and seed a test user:
+
+   docker-compose exec php php vendor/setup_db.php --seed=dev:dev
+
+4. Open http://localhost:8080 and explore.  Use the Sign Up form to create an account and try the purchase flow.
+
+Local dev without Docker
+------------------------
+- Start your PHP+MySQL stack (OSPanel, XAMPP, etc.) and place files under your webroot. Use `.env` for DB credentials.
+
+Security & hardening notes
+--------------------------
+- DB credentials use env variables (`.env.example` provided); do not commit `.env`.  
+- Input handling: prepared statements are used in the auth/registration flows; CSRF tokens added to major forms.  
+- Add more output escaping and consider a templating engine (Twig) for further XSS mitigation.
+
+Developer & contributing
+------------------------
+- Run `composer install` to set up dev tools.  
+- Run unit tests: `vendor/bin/phpunit`  
+- Integration tests use Docker (they exercise the HTTP endpoints): CI runs them automatically.
+
+Roadmap / ideas for contribution
+--------------------------------
+- Add Docker Compose production configuration and basic reverse-proxy (Traefik/Nginx)  
+- Move pixel storage to a proper DB or object store for scale; add deletion/migration tools  
+- Add analytics, payments, and admin moderation features  
+
+License
+-------
+MIT — see `LICENSE`.
+
+Thanks for checking out Pixelis — if you'd like, I can add a demo screenshot/GIF, a landing page design, or a short recorded walkthrough to help make this repo stand out when you present it to recruiters or hiring managers.
 Prerequisites
 -------------
 - Windows (tested with OSPanel)
