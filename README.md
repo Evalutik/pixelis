@@ -154,14 +154,14 @@ Notes
 ----------------------------------------------
 - Do not commit credentials. Move DB credentials to a `.env` file and use `vlucas/phpdotenv` or environment variables. (I added a `.env.example` and `src/connect.php` now reads env vars if present.)
 - Several SQL queries currently use string interpolation and were vulnerable to SQL injection. They should be converted to prepared statements (I updated `actions/authorization.php`, `actions/registration.php`, `actions/isnickwrong.php` to use prepared statements).
-- Add CSRF tokens for POST forms (sign-up/sign-in/checkout). I added a small helper `vendor/csrf.php` with `csrf_token()`, `csrf_input()` and `csrf_validate()`; include it in form pages and validate in handlers.
+- Add CSRF tokens for POST forms (sign-up/sign-in/checkout). I added a small helper `src/csrf.php` with `csrf_token()`, `csrf_input()` and `csrf_validate()`; include it in form pages and validate in handlers.
 - Sanitize all output with `htmlspecialchars()` (or use a templating engine) to avoid XSS when rendering user-supplied data.
 - Add `.gitignore` to avoid committing generated files (pixelsDB/, bronpix/, logs) and large image files in `photo/` (I added a `.gitignore` and `.gitattributes`).
 
 What I can do next
 ------------------
 - Add `.gitignore` and `.gitattributes` to ignore generated data and large files.
-- Add `.env.example` and modify `vendor/connect.php` to use env vars.
+- Add `.env.example` and modify `src/connect.php` to use env vars.
 - Replace vulnerable queries with prepared statements.
 
 Local convenience (safe)
