@@ -1,0 +1,7 @@
+# Minimal gitleaks config. Add allowlists if needed later.
+# See https://github.com/gitleaks/gitleaks for configuration details.
+[[rules]]
+description = "Generic secret detection (default rule)
+"
+regex = '''(?i)(?:api[_-]?key|secret|token|password|pass|pwd|aws[_-]?secret|aws[_-]?key|private[_-]?key)\s*[:=]\s*[^\s"']+'''
+entropy = 0.0
