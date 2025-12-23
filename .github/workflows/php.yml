@@ -69,7 +69,7 @@ jobs:
             echo 'waiting...'; sleep 2;
           done
       - name: Run DB setup
-        run: docker-compose exec php php src/setup_db.php --seed=itest:itest
+        run: docker-compose exec php php vendor/setup_db.php --seed=itest:itest
       - name: Install dependencies in container
         run: docker-compose exec php composer install --no-interaction
       - name: Run integration tests
