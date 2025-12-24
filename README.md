@@ -91,27 +91,6 @@ Developer tips
 - Use `make test` to run the full suite (if your environment has the required tools).
 - Use `docker-compose exec php bash` to run commands inside the PHP container for debugging.
 
-Recommended next steps
-----------------------
-- Add and commit a `.gitignore` that excludes `pixelsDB/`, `bronpix/`, runtime files and other generated data.
-- Add a `.env.example` and prefer environment variables in `src/connect.php`.
-- Replace any remaining string-interpolated SQL with prepared statements.
-
 License
 -------
 MIT — see `LICENSE`
-
-Contributing / help
--------------------
-If you'd like, I can:
-
-- Add a short demo GIF or screenshot to the README.
-- Create `.env.example` and `.gitignore`, commit them.
-- Run the test suite inside Docker and report results.
-
----
-_README reformatted for clarity and better developer experience._
-
-<!-- markdownlint-enable MD013 MD033 -->
---
-Generated/edited by a repo maintainer assistant to make the README concise and actionable.
