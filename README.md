@@ -6,7 +6,11 @@
 [![Codecov](https://codecov.io/gh/Evalutik/pixelis/branch/main/graph/badge.svg)](https://codecov.io/gh/Evalutik/pixelis)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-> Small PHP app for buying single pixels on a shared 1000×1000 canvas. Each pixel can be reserved, purchased and associated with a link and a short message.
+
+> PHP app for buying single pixels on a shared 1000×1000 canvas. Each pixel can be reserved, purchased and associated with a link and a short message.
+<img width="3456" height="1841" alt="image" src="https://github.com/user-attachments/assets/c41907e4-6476-42f1-92b1-510a1669471d" />
+<img width="3452" height="1847" alt="image" src="https://github.com/user-attachments/assets/380ed9b8-12e3-42fc-9210-80bae0a397af" />
+
 
 Table of contents
 -----------------
