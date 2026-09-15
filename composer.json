@@ -12,7 +12,7 @@
     "friendsofphp/php-cs-fixer": "^3.0",
     "phpstan/phpstan": "^2.1",
     "phpunit/phpunit": "^10",
-    "guzzlehttp/guzzle": "^7.0"
+    "guzzlehttp/guzzle": "^8.2"
   },
   "scripts": {
     "fix": "php-cs-fixer fix",
